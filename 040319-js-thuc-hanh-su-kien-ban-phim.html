@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh su kien ban phim 040319</title>
+</head>
+<body onload="docReady()">
+<img id="nobita" src="doraemon-nobita.jpeg" style="position: absolute; left: 0px; top: 0px; height: 100px; width: 80px;">
+<script>
+    function upArrowPressed(){
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+
+    }
+    function dowArrowPressed(){
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+
+    }
+
+    function leftArrowPressed(){
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+
+    }
+    function rightArrowPressed(){
+        let element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+    }
+    
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37 :
+                leftArrowPressed();
+                break;
+
+            case 39 :
+                rightArrowPressed();
+                break;
+
+            case 38 :
+                upArrowPressed();
+                break;
+
+            case  40 :
+                dowArrowPressed();
+                break;
+
+
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }    
+
+</script>
+
+</body>
+</html>
